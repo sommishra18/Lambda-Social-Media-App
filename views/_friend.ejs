@@ -1,0 +1,72 @@
+<!-- <h4>Friends</h4>
+<% for (u of all_users) { %>
+<p>
+  <a href="/users/profile/<%= u.id %>"> <%= u.name %></a>
+</p>
+<% } %> -->
+<% if(locals.user) { %>
+  <div class="friends-list">
+    <div class="header">Friends (<%= locals.user.friends.length %>)</div>
+    <br>
+    <% if(locals.user.friends.length == 0) { %>
+
+    <div class="no-friends">No friends found!</div>
+
+    <% }else{ %> 
+    
+      <% for(friend of locals.user.friends){ %> 
+      
+        <% if(friend.from_user.id == locals.user.id) { %>
+    <div class="yes-friend">
+      <a class="friends-item" href="/users/profile/<%=friend.to_user._id%>">
+        <div class="friends-img">
+          <% if(friend.to_user.avatar == undefined){ %>
+          <img
+            class="rounded-circle"
+            id="user-dp"
+            src="https://images.assetsdelivery.com/compings_v2/tanyastock/tanyastock1608/tanyastock160801788.jpg"
+            alt="logo"
+          />
+          <% }else{ %>
+          <img
+            class="rounded-circle"
+            id="user-dp"
+            src="<%= friend.to_user.avatar %>"
+            alt="logo2"
+          />
+          <% } %>
+        </div>
+        <div class="friends-name"><%= friend.to_user.name %></div>
+      </a>
+    </div>
+    <% } %> 
+    
+    <% if(friend.to_user.id == locals.user.id) { %>
+    <div class="yes-friend">
+      <a class="friends-item" href="/users/profile/<%=friend.from_user._id%>">
+        <div class="friends-img">
+          <% if(friend.from_user.avatar == undefined){ %>
+          <img
+            class="rounded-circle"
+            id="user-dp"
+            src="https://cdn-icons-png.flaticon.com/512/16/16612.png"
+            alt="logo"
+          />
+          <% }else{ %>
+          <img
+            class="rounded-circle"
+            id="user-dp"
+            src="<%= friend.from_user.avatar %>"
+            alt="logo2"
+          />
+          <% } %>
+        </div>
+        <div class="friends-name"><%= friend.from_user.name %></div>
+      </a>
+    </div>
+    <% } %> <% } %> 
+    
+    <% } %>
+  </div>
+  <% } %> 
+  

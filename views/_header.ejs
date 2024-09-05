@@ -1,0 +1,39 @@
+<% if (locals.user) { %>
+<header style="background-color: #202020; border-bottom: 2px solid white;">
+    <div class="company"> <i class="fa-sharp fa-solid fa-lambda"></i> <i> <b> <a href="/"> Lambda </a> </b> </i>  </div>
+    <ul type="none">
+        <% if (locals.user) { %>
+            <li id="chatContainer">
+                <a href"#" id="showChatButton">Chat Room</a>
+            </li>
+            <li> 
+                <a href="/users/profile/<%= locals.user._id %>"> <%= user.name %> </a>
+            </li>
+            <li>
+                <a href="/users/sign-out"> Sign Out</a>
+            </li>
+        <% } else { %>
+                <li> <a href="/users/sign-up"> Sign Up </a></li>
+                <li id="signIn"> <a href="/users/sign-in"> Sign In </a></li>
+            <% } %>
+    </ul>
+</header>
+<% } else { %>
+    <header>
+        <div class="company"> <i class="fa-sharp fa-solid fa-lambda"></i> <i> <b> Lambda</b> </i>  </div>
+        <ul type="none">
+            <% if (locals.user) { %>
+                <li> 
+                    <a href="/users/profile/<%= locals.user._id %>"> <%= user.name %> </a>
+                </li>
+                <li>
+                    <a href="/users/sign-out"> Sign Out</a>
+                </li>
+            <% } else { %>
+                    <li> <a href="/users/sign-up"> Sign Up </a></li>
+                    <li id="signIn"> <a href="/users/sign-in"> Sign In </a></li>
+                <% } %>
+        </ul>
+    </header>
+
+<% } %>

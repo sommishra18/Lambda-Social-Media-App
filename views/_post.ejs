@@ -1,0 +1,74 @@
+<li id="post-<%= post._id %>">
+  <div class="post-content">
+    <% if (locals.user && locals.user.id == post.user.id) { %>
+    <small>
+      <a class="delete-post-button" href="/posts/destroy/<%= post.id %>"> <i class="fa-solid fa-trash-can fa-2x"></i> </a>
+    </small>
+    <% } %> 
+    <div class="post-img-vau">
+      <a href="/users/profile/<%=post.user.id%>">
+        <% if (post.user.avatar == undefined) { %>
+          <img
+          class="rounded-circle"
+          id="user-dp"
+          src="https://images.assetsdelivery.com/compings_v2/tanyastock/tanyastock1608/tanyastock160801788.jpg"
+          alt="<%= post.user.name %>"
+        />
+        <% } else { %>
+          <img src="<%=post.user.avatar%>" alt="<%=post.user.name%>">
+        <% } %>
+      </a> 
+     
+    </div>
+      <a href="/users/profile/<%=post.user.id%>">
+        <small class="user-name"> <%= post.user.name %>  </small>
+      </a>
+    <br>
+  <div class="mainPostContent"> <%= post.content %>  </div> 
+  <br>
+    <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
+    
+    <!-- study about the data attribute -->
+    <div>
+      <a
+        class="toggle-like-button"
+        data-likes="<%= post.likes.length %>"
+        href="/likes/toggle/?id=<%=post._id%>&type=Post"
+      >
+       <i class="fa-regular white fa-heart fa-lg"> <%= post.likes.length %> </i>
+      </a>
+    </div>
+
+  </div>
+
+  <div id="comment-list">
+    <div class="comment-form">
+      <% if (locals.user) { %>
+      <form
+        id="post-<%= post._id %>-comment-form"
+        action="/comments/create"
+        method="POST"
+      >
+        <input
+          type="text"
+          class="cmt"
+          name="content"
+          placeholder="Type here to add comment"
+          required
+        />
+        <input type="hidden" name="post" value="<%= post._id%>" />
+        <input class="submit" type="submit" value="Add Comment" />
+      </form>
+      <% } %>
+    </div>
+    <br>
+    <div id="Comms"> Comments </div>
+    <div class="post-comment-list">
+      <ul id="post-comments-<%= post._id%>">
+       <% for(comment of post.comments) { %>
+       <%- include('_comment') -%> 
+       <% } %>
+      </ul>
+    </div>
+  </div>
+</li>

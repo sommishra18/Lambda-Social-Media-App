@@ -1,0 +1,114 @@
+body {
+  overflow-y: hidden; }
+  body .user-profile {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 4.5%;
+    color: white;
+    flex-direction: row; }
+    body .user-profile .first-half {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-direction: column;
+      width: 50%;
+      height: 100%;
+      border-right: 2px solid white; }
+      body .user-profile .first-half .img-container {
+        width: 40%;
+        height: 40%;
+        margin: 0 auto 10px auto;
+        border: 4px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        body .user-profile .first-half .img-container img {
+          height: 95%;
+          width: 95%; }
+    body .user-profile .second-half {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 50%;
+      height: 100%; }
+      body .user-profile .second-half .profile-head {
+        font-size: 40px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin-top: -5rem;
+        margin-bottom: 2rem; }
+      body .user-profile .second-half .update-form {
+        width: 85%;
+        height: fit-content;
+        background-color: #303030;
+        position: relative; }
+        body .user-profile .second-half .update-form form {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          body .user-profile .second-half .update-form form input {
+            width: 90%;
+            font-size: 20px;
+            margin-top: 10px;
+            padding: 5px; }
+          body .user-profile .second-half .update-form form .choose-file {
+            color: white; }
+          body .user-profile .second-half .update-form form .choose-file:hover {
+            cursor: pointer;
+            background-image: linear-gradient(to right, #ff9966, #ff5e62); }
+          body .user-profile .second-half .update-form form .form-submit {
+            margin-bottom: 10px;
+            width: 50%; }
+          body .user-profile .second-half .update-form form .form-submit:hover {
+            cursor: pointer;
+            background-image: linear-gradient(to right, #ff9966, #ff5e62); }
+      body .user-profile .second-half .field {
+        width: 80%;
+        height: fit-content; }
+        body .user-profile .second-half .field .field-child {
+          margin-bottom: 10px; }
+        body .user-profile .second-half .field .field-label {
+          font-size: 25px;
+          background-color: black;
+          display: inline-block;
+          padding: 5px; }
+        body .user-profile .second-half .field .field-value {
+          font-size: 25px;
+          background-color: #303030;
+          display: inline-block;
+          padding: 5px; }
+      body .user-profile .second-half .btn {
+        margin-top: 10px;
+        position: relative;
+        margin-bottom: 20px; }
+        body .user-profile .second-half .btn a {
+          background-color: white;
+          padding: 10px;
+          border: 3px solid black;
+          color: black;
+          text-decoration: none;
+          font-size: 20px; }
+      body .user-profile .second-half .btn:hover {
+        cursor: pointer; }
+        body .user-profile .second-half .btn:hover a {
+          background-image: linear-gradient(to right, #ff9966, #ff5e62); }
+      body .user-profile .second-half .backHome {
+        margin-top: 15px;
+        position: relative; }
+        body .user-profile .second-half .backHome a {
+          background-color: white;
+          padding: 10px;
+          border: 3px solid black;
+          color: black;
+          text-decoration: none;
+          font-size: 20px; }
+      body .user-profile .second-half .backform {
+        margin-top: 2rem; }
+      body .user-profile .second-half .backHome:hover {
+        cursor: pointer; }
+        body .user-profile .second-half .backHome:hover a {
+          background-image: linear-gradient(to right, #ff9966, #ff5e62); }

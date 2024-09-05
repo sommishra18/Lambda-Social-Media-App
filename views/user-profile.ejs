@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="<%= assetPath('css/user-profile.css') %>" />
+
+<div class="user-profile">
+  <div class="first-half">
+    <div class="img-container">
+      <% if(locals.profile_user.avatar == undefined){ %>
+      <img
+        src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+        alt="<%= user.name %>"
+      />
+      <% }else{ %>
+      <img src="<%= locals.profile_user.avatar %>" alt="<%= locals.profile_user.name %>" width="100" />
+      <% } %>
+    </div>
+  </div>
+
+  <div class="second-half">
+    <div class="profile-head">User profile</div>
+    <% if(user.id == profile_user.id){ %>
+
+    <!-- if user matches then show the form -->
+    <% if(user.id == profile_user.id) { %>
+    <div class="update-form">
+      <form
+        action="/users/update/<%= profile_user.id %>"
+        enctype="multipart/form-data"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value="<%= profile_user.name %>"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value="<%= profile_user.email %>"
+          required
+        />
+        <input
+          class="choose file"
+          type="file"
+          name="avatar"
+          placeholder="Profile Picture"
+        />
+        <input class="form-submit" type="submit" value="Update" />
+      </form>
+    </div>
+
+    <div class="backHome backform">
+      
+      <a style="color: black" class="back-button-main" href="/"> Back </a>
+    
+     </div>
+
+    <% } else { %>
+    <!-- Show only the profile info -->
+
+    <!-- <p><%= profile_user.name %></p>
+    <p><%= profile_user.email %></p> -->
+
+    <% } %> <%} else { %>
+    <div class="field">
+      <div class="field-child">
+        <div class="field-label">Email</div>
+        <div class="field-value"><%= locals.profile_user.email %></div>
+      </div>
+      <div class="field-child">
+        <div class="field-label">Name</div>
+        <div class="field-value"><%= locals.profile_user.name %></div>
+      </div>
+    </div>
+
+    <div class="btn-grp">
+      <% let isFriend = false %> <% for(let friend of
+      locals.populated_user.friends){ %> <% if(friend.to_user == profile_user.id
+      || friend.from_user == profile_user.id){ %> <% isFriend = true %> <% } %>
+      <% } %> <% if(isFriend){ %>
+      <div class="btn save-btn">
+        <a
+          style="color: black"
+          class="toggle-friend-btn"
+          href="/friends/add-friend/?id=<%= profile_user.id %>"
+        >
+          Remove Friend
+        </a>
+      </div>
+      <% }else{ %>
+      <div class="btn save-btn">
+        <a
+          style="color: black"
+          class="toggle-friend-btn"
+          href="/friends/add-friend/?id=<%= profile_user.id %>"
+        >
+          Add Friend
+        </a>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="backHome">
+      
+        <a style="color: black" class="back-button-main" href="/"> Back </a>
+      
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<script src="<%= assetPath('javascript/toggle_friend.js') %> "></script>

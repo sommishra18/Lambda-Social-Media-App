@@ -1,0 +1,86 @@
+.sign-box {
+  width: 30%;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(27, 227, 227, 0.513);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; }
+  .sign-box form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .sign-box form input {
+      position: relative;
+      width: 80%;
+      margin: 5px auto 5px auto;
+      text-align: center;
+      height: 2rem;
+      color: black;
+      border: 2px solid black;
+      border-radius: 10px;
+      box-shadow: 0px 8px 32px 0 black; }
+    .sign-box form .box {
+      margin: 10px 0 10px 0; }
+    .sign-box form #in1:hover {
+      box-shadow: none; }
+    .sign-box form #in2:hover {
+      box-shadow: none; }
+    .sign-box form #in3:hover {
+      box-shadow: none; }
+    .sign-box form #in4:hover {
+      box-shadow: none; }
+    .sign-box form #in5:hover {
+      box-shadow: none; }
+    .sign-box form .top-name {
+      margin-top: 20px; }
+    .sign-box form .submit-button {
+      position: relative;
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: black;
+      color: white;
+      font-size: 18px;
+      border: 2px solid black;
+      border-radius: 0px; }
+    .sign-box form .submit-button:hover {
+      cursor: pointer;
+      background-image: linear-gradient(to right, #ff9966, #ff5e62);
+      color: black; }
+  .sign-box .Or {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-top: -10px;
+    font-weight: 800; }
+  .sign-box .Google {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    border: 2px solid black;
+    text-align: center;
+    height: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 8px 32px 0 black;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .sign-box .Google a {
+      color: black;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none; }
+  .sign-box .Google:hover {
+    cursor: pointer;
+    background-image: linear-gradient(109.6deg, #9cfcf8 11.2%, #6e7bfb 91.1%); }
+
+fa-google {
+  color: black; }

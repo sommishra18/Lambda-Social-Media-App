@@ -1,0 +1,41 @@
+<li id="comment-<%= comment._id %>">
+  <div class="comment-content">
+    <% if (locals.user && locals.user.id == comment.user._id) { %>
+    <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">
+      <i class="fa-solid fa-trash-can fa-lg"></i>
+    </a>
+    <% } %>
+    <div class="post-img-vau"> 
+      <a href="/users/profile/<%=comment.user.id%>">
+        <% if(comment.user.avatar == undefined) { %>
+          <img
+          class="rounded-circle"
+          id="user-dp"
+          src="https://images.assetsdelivery.com/compings_v2/tanyastock/tanyastock1608/tanyastock160801788.jpg"
+          alt="<%= comment.user.name %>"
+        />
+    <% } else { %>
+         <img src="<%=comment.user.avatar%>" alt="<%=comment.user.name%>">
+    <% } %>
+      </a>
+      
+    </div>
+    <a href="/users/profile/<%=comment.user.id%>">
+        <small class="comment-name"> <%= comment.user.name %> </small>
+    </a>
+    <div class="main-comment-content"><%= comment.content %></div>
+    <br />
+    <!-- CHANGE :: display the likes of this comment, if the user is logged in, then show the link to toggle likes, else, just show the count -->
+    <!-- study about the data attribute -->
+    <small>
+      <a
+        class="toggle-like-button"
+        data-likes="<%= comment.likes.length %>"
+        href="/likes/toggle/?id=<%=comment._id%>&type=Comment"
+      >
+        <i class="fa-regular white fa-heart fa-lg"> <%= comment.likes.length %> </i>
+      </a>
+ 
+    </small>
+  </div>
+</li>

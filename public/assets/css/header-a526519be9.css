@@ -1,0 +1,49 @@
+header {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 15%;
+  z-index: 2; }
+  header ul {
+    float: right;
+    height: 100%;
+    margin-top: 2rem;
+    margin-right: 2rem; }
+    header ul li {
+      position: relative;
+      height: 26px;
+      display: inline-block;
+      margin-right: 15px;
+      border: 2px solid white; }
+      header ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        padding: 14px; }
+      header ul li:hover {
+        background-color: white;
+        cursor: pointer; }
+        header ul li:hover a {
+          color: black; }
+    header ul #signIn {
+      background-color: white; }
+      header ul #signIn a {
+        color: black; }
+      header ul #signIn:hover {
+        background-image: linear-gradient(to right, #ff9966, #ff5e62); }
+        header ul #signIn:hover a {
+          color: black; }
+
+.company {
+  display: inline-block;
+  font-size: 35px;
+  height: 100%;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 2px; }
+  .company a {
+    color: white;
+    text-decoration: none; }
